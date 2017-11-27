@@ -1,0 +1,15 @@
+TestCase subclass: #TestSuite
+instanceVariableNames: 'parser'
+classVariableNames: ''
+poolDictionaries: ''
+category: nil !
+
+TestSuite>>#setUp
+   parser := Parse new.
+
+TestSuite>>#testParseNum
+   | syntax |
+   | result |
+   syntax := '5'
+   result := NumC new 5.
+   self assert: (parser parse: syntax = result)
